@@ -1,0 +1,51 @@
+@import "colors.scss";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900|Source+Sans+Pro:300,400,700,900&display=swap');
+
+$font-family-primary: "Source Sans Pro", sans-serif;
+$font-family-accent: "Montserrat", sans-serif;
+
+
+// Inspired by a tweet by Sidoruk Sergey (@Sidoruk_SV)
+// https://twitter.com/Sidoruk_SV/status/422746337394716672
+
+@mixin font-weight($weight) {
+  $weights: (
+    thin: 100,
+    extra-light: 200,
+    ultra-light: 200,
+    light: 300,
+    normal: 400,
+    book: 400,
+    regular: 400,
+    medium: 500,
+    semi-bold: 600,
+    demi-bold: 600,
+    bold: 700,
+    extra-bold: 800,
+    ultra-bold: 900,
+    heavy: 900,
+    black: 900,
+    ultra: 900,
+    ultra-black: 900,
+    extra-ultra: 900
+  );
+  $output: $weight;
+  @if map-has-key($weights, $weight) {
+    $output: map-get($weights, $weight);
+  }
+  font-weight: $output;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-accent;
+    @include font-weight(heavy);
+}
+
+a, p {
+    @include font-weight(regular);
+    font-family: $font-family-primary;
+}
+
+a {
+    text-decoration-line: underline;
+}

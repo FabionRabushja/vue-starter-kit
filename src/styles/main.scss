@@ -1,0 +1,12 @@
+@import "colors.scss";
+@import "typography.scss";
+
+//@import "node_modules/bootstrap/scss/bootstrap";
+
+body {
+    background-color: $color-base;
+
+    * {
+        color: $color-content;
+    }
+}
